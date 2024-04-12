@@ -110,3 +110,89 @@ iframe {
     width: 30%;
     height: auto;
 }
+
+/* Puntos de corte */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    h1 {
+        text-align: left;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 8rem;
+    }
+
+    body {
+        padding-top: 8rem;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .menuBurger {
+        width: 30%;
+        padding: 2%;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: #E0CBA8;
+    }
+
+    .menuBurger:hover {
+        background-color: whitesmoke;
+    }
+
+    .menuPpal {
+        display: none;
+    }
+
+    .articulos {
+        grid-template-columns: 90%;
+        justify-content: space-around;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) {
+    header {
+        height: 6rem;
+    }
+
+    .menuBurger {
+        display: none;
+    }
+
+    body {
+        padding-top: 6rem;
+    }
+
+    .articulos {
+        grid-template-columns: 45% 45%;
+        justify-content: space-around;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    header {
+        height: 7rem;
+    }
+
+    .menuBurger {
+        display: none;
+    }
+
+    body {
+        padding-top: 7rem;
+    }
+    
+    .articulos{
+        grid-template-columns: 50% 50%;
+        justify-content: space-around;
+    }
+}
