@@ -2,3 +2,61 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    padding-top: 7rem;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 8rem;
+}
+
+h1, h2, h4 {
+    text-align: center;
+    padding: 1%;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    height: 4rem;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+li {
+    padding: 1%;
+    margin: 1%;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    background-color: #779FA1;
+    color: black;
+}
+
+header {
+    height: 7rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8.5rem;
+}
