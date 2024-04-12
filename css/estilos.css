@@ -111,6 +111,18 @@ iframe {
     height: auto;
 }
 
+.logo {
+    width: 2rem;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Parche */
+.linksCH:hover {
+    background-color: #88498F;
+}
+
 /* Puntos de corte */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
