@@ -85,6 +85,28 @@ button {
     border-radius: 5px;
 }
 
+.logoFijo {
+    margin: 1%;
+    width: 5rem;
+    position: fixed;
+    bottom: 5rem;
+    right: 2%;
+    z-index: 20;
+    background-color: grey;
+    border-radius: 50%;
+}
+
 iframe {
     width: 100%;
+}
+
+.contImg {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2%;
+}
+
+.imgCurso {
+    width: 30%;
+    height: auto;
 }
