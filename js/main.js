@@ -1,21 +1,7 @@
-// Contenido SPA
-// Cuidado con como se lee...
+import { cambiarSeccion } from "./ruteo.js";
 
-// 3° creo obj con las rutas
-const sitio = {
-    cursos: './sitio/cursos.html',
-    eventos: './sitio/eventos.html',
-    acercaDe: './sitio/acercaDe.html',
-    registro: './sitio/registro.html'
-}
-
-// 4° función que completa el contenido
-function cambiarSeccion(seccion){
-    let seccionDinamica = document.querySelector('#contenidoSPA');
-    fetch(`${sitio[seccion]}`)
-        .then(respuesta => respuesta.text())
-        .then(datos => seccionDinamica.innerHTML = datos);
-}
+// Seteo contenido por defecto al cargar el sitio
+window.addEventListener("DOMContentLoaded", evento =>cambiarSeccion("cursos"));
 
 // 1° Capturo todos los botones
 const botonesNav = document.querySelectorAll('.menuSPA');

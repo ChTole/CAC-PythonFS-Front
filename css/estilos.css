@@ -102,8 +102,9 @@ button {
     border-radius: 50%;
 }
 
-iframe {
-    width: 100%;
+.imgEvento {
+    width: 60%;
+    height: auto;
 }
 
 .contImg {
