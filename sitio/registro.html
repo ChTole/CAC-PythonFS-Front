@@ -1,19 +1,56 @@
 <h2 class="color5">Registrate</h2>
-<div class="articulos">
-    <article>
-        <p>Creá tu cuenta para poder acceder a los cursos.</p>
-        <form action="">
-            <div class="campoForm">
-                <label for="nombre">Ingresa tu nombre:</label>
-                <input type="text" name="nombre" id="nombre">
-                <label for="apellido">Ingresa tu apellido:</label>
-                <input type="text" name="apellido" id="apellido">
-                <label for="correo">Ingresa tu correo electrónico:</label>
-                <input type="email" name="correo" id="correo">
-                <label for="contrasenia">Ingresa tu contraseña:</label>
-                <input type="password" name="contrasenia" id="contrasenia">
-                <input type="submit" value="Enviar datos">
-            </div>
-        </form>
-    </article>
+<div>
+    <h4>Creá tu cuenta para poder acceder a los cursos.</h4>
+    <form action="">
+        <div class="articulos">
+
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div class="campoForm">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+                <div class="campoForm">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido">
+                </div>
+                <div class="campoForm">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" name="correo" id="correo">
+                </div>
+                <div class="campoForm">
+                    <label for="contrasenia">Contraseña:</label>
+                    <input type="password" name="contrasenia" id="contrasenia">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Sobre tu formación</legend>
+                <div class="campoForm">
+                    <label for="educacionFormal">Educación</label>
+                    <select name="educacionFormal">
+                        <option value=0>Secundario incompleto</option>
+                        <option value=1 selected>Secundario completo</option>
+                        <option value=2>Terciario/Universitario incompleto</option>
+                        <option value=3>Terciario/Universitario completo</option>
+                    </select>
+                </div>
+                <div class="campoForm">
+                    <label for="conocimientos">Conocimientos previos:</label>
+                    <div>
+                        <input type="checkbox" name="HTML">
+                        <label for="HTML">HTML</label>
+                        <input type="checkbox" name="CSS">
+                        <label for="CSS">CSS</label>
+                        <input type="checkbox" name="JavaScript">
+                        <label for="JavaScript">JavaScript</label>
+                        <input type="checkbox" name="Python">
+                        <label for="Python">Python</label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="validar">
+            <input type="submit" value="Enviar datos" class="color1 validarInput">
+        </div>
+    </form>
 </div>

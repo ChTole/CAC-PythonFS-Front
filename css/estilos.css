@@ -7,7 +7,7 @@ body {
     padding-top: 7rem;
     position: relative;
     min-height: 100vh;
-    padding-bottom: 8rem;
+    padding-bottom: 9rem;
 }
 
 h1, h2, h4 {
@@ -49,7 +49,6 @@ a:hover {
 }
 
 header {
-    height: 7rem;
     position: fixed;
     top: 0;
     width: 100%;
@@ -65,11 +64,14 @@ footer {
     height: 9rem;
 }
 
-article {
+article, fieldset {
     border: 1px solid black;
     border-radius: 10px;
     padding: 2%;
     margin: 2%;
+}
+
+article {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,6 +124,33 @@ iframe {
     margin-right: 5%;
 }
 
+.campoForm {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.validar {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+.validarInput {
+    width: 80%;
+    height: 3rem;
+    font-size: larger;
+    border-radius: 5px;
+}
+
+.validarInput:hover {
+    background-color: whitesmoke;
+    color: black;
+    font-weight: 600;
+}
+
 /* Parche */
 .linksCH:hover {
     background-color: #88498F;
@@ -139,11 +168,11 @@ iframe {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 8rem;
+        height: 7.5rem;
     }
 
     body {
-        padding-top: 8rem;
+        padding-top: 7.5rem;
     }
 
     nav {
@@ -176,26 +205,6 @@ iframe {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 600px) {
     header {
-        height: 6rem;
-    }
-
-    .menuBurger {
-        display: none;
-    }
-
-    body {
-        padding-top: 6rem;
-    }
-
-    .articulos {
-        grid-template-columns: 45% 45%;
-        justify-content: space-around;
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    header {
         height: 7rem;
     }
 
@@ -206,9 +215,51 @@ iframe {
     body {
         padding-top: 7rem;
     }
+
+    .articulos {
+        grid-template-columns: 45% 45%;
+        justify-content: space-around;
+    }
+
+    .unaColumna {
+        grid-template-columns: 80%;
+        align-content: baseline;
+        padding-bottom: 8%;
+    }
+
+    .campoForm {
+        flex-direction: column;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    header {
+        height: 7.5rem;
+    }
+
+    .menuBurger {
+        display: none;
+    }
+
+    body {
+        padding-top: 7.5rem;
+    }
     
     .articulos{
         grid-template-columns: 50% 50%;
         justify-content: space-around;
     }
+    
+    .unaColumna {
+        grid-template-columns: 80%;
+        align-content: baseline;
+        padding-bottom: 8%;
+    }
+
+    .campoForm {
+        flex-direction: row;
+    }
+
 }
