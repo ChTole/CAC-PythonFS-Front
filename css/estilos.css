@@ -23,15 +23,19 @@ h2 {
     height: 4rem;
 }
 
-ul {
+.menuPpal {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
+    padding-bottom: 0.5%;
 }
 
-li {
-    padding: 1%;
-    margin: 1%;
+.menuSPA {
+    width: 20%;
+    font-size: 1.2rem;
+}
+.menuSPA:hover {
+    background-color: whitesmoke;
 }
 
 a:link, a:visited {
