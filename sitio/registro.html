@@ -1,9 +1,9 @@
 <h2 class="color5">Registrate</h2>
 <div>
     <h4>Creá tu cuenta para poder acceder a los cursos.</h4>
-    <form action="">
+    <h4 id="errores"><b></b></h4>
+    <form action="./sitio/rtaForm.html" id="registro" method="POST">
         <div class="articulos">
-
             <fieldset>
                 <legend>Datos personales</legend>
                 <div class="campoForm">
@@ -27,7 +27,7 @@
                 <legend>Sobre tu formación</legend>
                 <div class="campoForm">
                     <label for="educacionFormal">Educación</label>
-                    <select name="educacionFormal">
+                    <select id="educacionFormal">
                         <option value=0>Secundario incompleto</option>
                         <option value=1 selected>Secundario completo</option>
                         <option value=2>Terciario/Universitario incompleto</option>
@@ -35,16 +35,26 @@
                     </select>
                 </div>
                 <div class="campoForm">
-                    <label for="conocimientos">Conocimientos previos:</label>
+                    <p>Conocimientos previos:</p>
                     <div>
-                        <input type="checkbox" name="HTML">
-                        <label for="HTML">HTML</label>
-                        <input type="checkbox" name="CSS">
-                        <label for="CSS">CSS</label>
-                        <input type="checkbox" name="JavaScript">
-                        <label for="JavaScript">JavaScript</label>
-                        <input type="checkbox" name="Python">
-                        <label for="Python">Python</label>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="HTML">
+                                <label for="HTML">HTML</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="CSS">
+                                <label for="CSS">CSS</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="JavaScript">
+                                <label for="JavaScript">JavaScript</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="Python">
+                                <label for="Python">Python</label>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </fieldset>

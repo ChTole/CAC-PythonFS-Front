@@ -11,4 +11,4 @@ function cambiarEstadoMenu(menu, icono) {
     }
 }
 
-export {cambiarEstadoMenu};
+export { cambiarEstadoMenu };

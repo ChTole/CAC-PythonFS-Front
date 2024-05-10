@@ -156,6 +156,11 @@ p {
     padding-top: 20%;
     padding-bottom: 20%;
 }
+
+li {
+    list-style-type: none;
+}
+
 /* Parche */
 .linksCH:hover {
     background-color: #88498F;

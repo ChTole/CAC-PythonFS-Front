@@ -12,6 +12,7 @@ const sitio = {
     eventos: './sitio/eventos.html',
     acercaDe: './sitio/acercaDe.html',
     registro: './sitio/registro.html',
+    rtaForm: './sitio/rtaForm.html',
     404: './sitio/404.html'
 }
 
@@ -30,13 +31,14 @@ function mostrarHash() {
     }
 
     let ruta = sitio[404]; // 404 por defecto
-
+    let destino = hashActual.substring(1,);
     // Evaluo la pertencia del hash a los atributos de "sitio"
-    if (hashActual.substring(1,) in sitio) {
-        ruta = sitio[hashActual.substring(1,)];
+    if (destino in sitio) {
+        ruta = sitio[destino];
     }
 
     cambiarSeccion(ruta);
 }
 
-export {mostrarHash};
+
+export { mostrarHash };
