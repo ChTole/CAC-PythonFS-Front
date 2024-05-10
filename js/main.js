@@ -11,9 +11,9 @@ function activarForm() {
             validarRegistro();
             evento.preventDefault();
         });
-        console.log('Formulario disponible!');
+        // console.log('Formulario disponible!');
     } catch (error) {
-        console.warn('Formulario aún no disponible!')
+        // console.warn('Formulario aún no disponible!');
     }
 }
 
