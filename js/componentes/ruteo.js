@@ -10,7 +10,7 @@ vienen acompañada de algún hash.*/
 const sitio = {
     cursos: './sitio/cursos.html',
     eventos: './sitio/eventos.html',
-    acercaDe: './sitio/acercaDe.html',
+    acercaDe: './sitio/acercade.html',
     registro: './sitio/registro.html',
     rtaForm: './sitio/rtaForm.html',
     404: './sitio/404.html'
