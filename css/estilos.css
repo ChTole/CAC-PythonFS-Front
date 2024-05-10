@@ -33,7 +33,13 @@ h2 {
 .menuSPA {
     width: 20%;
     font-size: 1.2rem;
+    font-weight: 600;
+    height: 3rem;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1%;
 }
+
 .menuSPA:hover {
     background-color: whitesmoke;
 }
@@ -83,12 +89,6 @@ p {
 
 .articulos {
     display: grid;
-}
-
-button {
-    font-weight: 600;
-    height: 3rem;
-    border-radius: 5px;
 }
 
 .logoFijo {
@@ -152,6 +152,10 @@ button {
     font-weight: 600;
 }
 
+.error404 {
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
 /* Parche */
 .linksCH:hover {
     background-color: #88498F;

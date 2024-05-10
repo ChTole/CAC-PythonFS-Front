@@ -6,13 +6,6 @@ import { cambiarEstadoMenu } from "./menuBurger.js";
 window.addEventListener("DOMContentLoaded", evento => mostrarHash());
 window.addEventListener("hashchange", evento => mostrarHash());
 
-// Capturo todos los botones del nav
-// const botonesNav = document.querySelectorAll('.menuSPA');
-// // Asigno la escucha del evento
-// for (let boton of botonesNav){
-//     boton.addEventListener('click', evento => cambiarSeccion(boton.getAttribute('id')));
-// }
-
 // ********** Menú oculto para celu **********
 // Menú hamburguesa
 let menuBurger = document.querySelector('.menuBurger');
