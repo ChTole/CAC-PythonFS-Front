@@ -64,10 +64,20 @@ function validarRegistro() {
     if (formValido) {
         window.location.hash = '#rtaForm';
         // Aguardo que cargue la respuesta, luego la completo
-        setTimeout(respuestaOk, 500, datos);
+        setTimeout(respuestaOk, 300, datos);
     } else {
         msjError.innerHTML = 'Verifique los datos ingresados!'
     }
 }
 
-export { validarRegistro };
+// ********** Activación del formulario **********
+function activarForm() {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', evento => {
+        validarRegistro();
+        evento.preventDefault();
+    });
+}
+
+
+export { activarForm };

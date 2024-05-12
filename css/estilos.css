@@ -113,8 +113,8 @@ p {
 }
 
 .imgCurso {
-    width: 30%;
-    height: auto;
+    width: auto;
+    height: 6rem;
 }
 
 .logo {

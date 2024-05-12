@@ -1,0 +1,100 @@
+[
+    {
+        "nombre": "Python desde cero",
+        "nivel": "básico",
+        "descripcion": "Introducción a la programación y sintáxis básica del lenguaje.",
+        "inicio": "2024-07-01",
+        "fin": "2024-09-30",
+        "imagen": [
+            {
+                "ubicacion": "./img/cursos/python1.png",
+                "textoAlt": "Logo de lenguaje Python"
+            }
+        ],
+        "docente": "Cosme Fulanito",
+        "cupos": 15
+    },
+    {
+        "nombre": "Python para análisis de datos",
+        "nivel": "intermedio",
+        "descripcion": "Aplicación de ETL con numpy, pandas y gráficos con matplotlib.",
+        "inicio": "2024-10-01",
+        "fin": "2024-12-30",
+        "imagen": [
+            {
+                "ubicacion": "./img/cursos/python2.png",
+                "textoAlt":"Logo de lenguaje Python"
+            }
+        ],
+        "docente": "Profesor Frink",
+        "cupos": 10
+    },
+    {
+        "nombre": "Desarrollo web Con HTML, CSS y JS",
+        "nivel": "básico",
+        "descripcion": "Introducción al desarrollo web, maquetación e interacción con sitio y/o aplicación web.",
+        "inicio": "2024-07-01",
+        "fin": "2024-09-30",
+        "imagen": [
+            {
+                "ubicacion": "./img/cursos/html5.png",
+                "textoAlt": "Logo de lenguaje HTML 5"
+            },
+            {
+                "ubicacion": "./img/cursos/CSS3.png",
+                "textoAlt": "Logo de lenguaje CSS 3"
+            },
+            {
+                "ubicacion": "./img/cursos/JavaScript.png",
+                "textoAlt": "Logo de lenguaje JavaScript"
+            }
+        ],
+        "docente": "Marty McFly",
+        "cupos": 15
+    },
+    {
+        "nombre": "Administración de bases de datos",
+        "nivel": "básico",
+        "descripcion": "Persistencia de datos, tipos de bases de datos, manejo básico de bases de datos relacionales.",
+        "inicio": "2024-10-01",
+        "fin": "2024-12-30",
+        "imagen": [
+            {
+                "ubicacion": "./img/cursos/MySQL.png",
+                "textoAlt": "Logo de MySQL"
+            }
+        ],
+        "docente": "Dr. Emmet Brown",
+        "cupos": 10
+    },
+    {
+        "nombre": "Django Framework",
+        "nivel": "avanzado",
+        "descripcion": "Desarrollo backend con Python, microservicios, arquitectura API-REST.",
+        "inicio": "2024-10-01",
+        "fin": "2024-12-30",
+        "imagen": [
+            {
+                "ubicacion": "./img/cursos/Django.png",
+                "textoAlt": "Logo de framework Django"
+            }
+        ],
+        "docente": "Obi-Wan Kenobi",
+        "cupos": 10
+    },
+    {
+        "nombre": "Introducción a Machine Learning",
+        "nivel": "intermedio",
+        "descripcion": "Fundamentos de ML, tipos y desarrollo de algoritmos con Python. ",
+        "inicio": "2024-07-01",
+        "fin": "2024-09-30",
+        "imagen": [
+            {
+                "ubicacion": "./img/cursos/machine-learning.png",
+                "textoAlt": "Logo de aprendizaje automático"
+            }
+        ],
+        "docente": "Dr. Henry Jones Jr.",
+        "cupos": 5
+    }
+]
