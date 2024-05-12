@@ -1,25 +1,14 @@
-{/* <article>
-    <h3 class="bold">Python desde cero</h3>
-    <div class="contImg">
-        <img class="imgCurso" src="./img/cursos/python1.png" alt="Logo de lenguaje Python">
-    </div>
-    <p>Abiertas las inscripciones para Agosto/24.</p>
-    <button class="color4">Ver curso</button>
-</article> */}
-
+// Carga de los datos externos
 const cargarDatos = function() {
     let contenido = document.querySelector('.articulos');
-    // console.log(contenido);
     fetch('./datos/cursos.json')
         .then(respuesta => respuesta.json())
         .then(datos => cargarCursos(contenido, datos));
 }
 
+// Modificación del HTML
 function cargarCursos(contenido, datos) {
-    // console.log(datos);
-    // console.log(contenido);
     for (let d of datos) {
-        // console.log(d);
         let curso = document.createElement('article');
         let nombre = document.createElement('h3');
         nombre.className = "bold";
@@ -42,5 +31,6 @@ function cargarCursos(contenido, datos) {
         contenido.appendChild(curso);
     }
 }
+
 
 export { cargarDatos };
