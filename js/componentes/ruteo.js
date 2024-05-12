@@ -44,7 +44,7 @@ function mostrarHash() {
     cambiarSeccion(ruta[0]);
     if (ruta[1]){
         // cambiarSeccion es asincro
-        setTimeout(ruta[1], 300);
+        setTimeout(ruta[1], 500);
     }
 }
 
