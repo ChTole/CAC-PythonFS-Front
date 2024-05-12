@@ -10,7 +10,7 @@ body {
     padding-bottom: 9rem;
 }
 
-h1, h2, h4 {
+h1, h2, h3 {
     text-align: center;
     padding: 1%;
 }
@@ -158,6 +158,17 @@ p {
 
 li {
     list-style-type: none;
+}
+
+div ul .checkBox {
+    margin-left: 0;
+    display: flex;
+    justify-content: left;
+}
+
+.checkBox {
+    font-size: large;
+    margin-top: 0.75rem;
 }
 
 /* Parche */
