@@ -65,6 +65,17 @@ function validarRegistro() {
         window.location.hash = '#rtaForm';
         // Aguardo que cargue la respuesta, luego la completo
         setTimeout(respuestaOk, 300, datos);
+        fetch('http://127.0.0.1:5000/registro', {
+            method: "POST",
+            body: JSON.stringify({
+              datos: datos
+            }),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
+          })
+          .then(respuesta => respuesta.json())
+          .then(resultado => console.log(resultado));
     } else {
         msjError.innerHTML = 'Verifique los datos ingresados!'
     }
