@@ -13,7 +13,6 @@ import { activarForm } from "./validarRegistro.js";
 const sitio = {
     // contenido: [url-plantilla, scripts-adicionales]
     cursos: ['./sitio/cursos.html', cargarDatos],
-    eventos: ['./sitio/eventos.html',],
     acercaDe: ['./sitio/acercade.html',],
     registro: ['./sitio/registro.html', activarForm],
     rtaForm: ['./sitio/rtaForm.html',],
