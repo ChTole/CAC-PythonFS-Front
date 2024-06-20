@@ -15,6 +15,7 @@ const sitio = {
     cursos: ['./sitio/cursos.html', cargarDatos],
     acercaDe: ['./sitio/acercade.html',],
     registro: ['./sitio/registro.html', activarForm],
+    perfil: ['./sitio/perfil.html', activarForm],
     rtaForm: ['./sitio/rtaForm.html',],
     404: ['./sitio/404.html']
 }

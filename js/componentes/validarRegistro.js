@@ -35,7 +35,17 @@ function respuestaOk(datos){
 }
 
 // Validación de los datos ingresados con modelo
-function validarRegistro() {
+function validarRegistro(tipo) {
+    let destino;
+
+    if (tipo == 'cuenta') {
+        destino = 'http://127.0.0.1:5000/api-edtech/cuenta';
+    } else if (tipo == 'perfil') {
+        destino = 'http://127.0.0.1:5000/api-edtech/registro';
+    } else {
+        console.warn('Destino de los datos erróneo!')
+    }
+
     let entradas = document.querySelectorAll('.campoForm>input');
     let datos = {}
     entradas.forEach(elemento => {
@@ -51,21 +61,20 @@ function validarRegistro() {
         }
     }
     
-    // Datos select y checkbox
-    let valorSelect = document.querySelector('#educacionFormal').value;
-    datos.educacion = modeloFormacion.educacionFormal[valorSelect];
-
-    let valorCheckbox = document.querySelectorAll('input[type=checkbox]');
-    datos.lenguajes = []
-    valorCheckbox.forEach(elemento => {
-        if (elemento.checked) datos.lenguajes.push(elemento.id);
-    });
+    if (tipo == 'perfil') {
+        // Datos select y checkbox
+        let valorSelect = document.querySelector('#educacionFormal').value;
+        datos.educacion = modeloFormacion.educacionFormal[valorSelect];
+        
+        let valorCheckbox = document.querySelectorAll('input[type=checkbox]');
+        datos.lenguajes = []
+        valorCheckbox.forEach(elemento => {
+                if (elemento.checked) datos.lenguajes.push(elemento.id);
+            });       
+    }
 
     if (formValido) {
-        window.location.hash = '#rtaForm';
-        // Aguardo que cargue la respuesta, luego la completo
-        setTimeout(respuestaOk, 300, datos);
-        fetch('http://127.0.0.1:5000/registro', {
+        fetch(destino, {
             method: "POST",
             body: JSON.stringify({
               datos: datos
@@ -75,17 +84,22 @@ function validarRegistro() {
             }
           })
           .then(respuesta => respuesta.json())
-          .then(resultado => console.log(resultado));
+          .then(resultado => console.log(resultado))
+          .catch(error => console.warn(error.status));
     } else {
         msjError.innerHTML = 'Verifique los datos ingresados!'
     }
+
+    window.location.hash = '#rtaForm';
+        // Aguardo que cargue la respuesta, luego la completo
+        setTimeout(respuestaOk, 300, datos);
 }
 
 // ********** Activación del formulario **********
 function activarForm() {
     const form = document.querySelector('form');
     form.addEventListener('submit', evento => {
-        validarRegistro();
+        validarRegistro(form.id);
         evento.preventDefault();
     });
 }
