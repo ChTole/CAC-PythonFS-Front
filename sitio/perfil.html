@@ -1,0 +1,62 @@
+<h2 class="color5">Registrate</h2>
+<div>
+    <h3>Creá tu cuenta para poder acceder a los cursos.</h3>
+    <h3 id="errores"><b></b></h3>
+    <form id="registro" method="POST">
+        <div class="articulos">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div class="campoForm">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+                <div class="campoForm">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido">
+                </div>
+                <div class="campoForm">
+                    <label for="doc_identidad">Documento de identidad:</label>
+                    <input type="number" name="doc_identidad" id="doc_identidad">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Sobre tu formación</legend>
+                <div class="campoForm">
+                    <label for="educacionFormal">Educación</label>
+                    <select id="educacionFormal">
+                        <option value=0>Secundario incompleto</option>
+                        <option value=1 selected>Secundario completo</option>
+                        <option value=2>Terciario/Universitario incompleto</option>
+                        <option value=3>Terciario/Universitario completo</option>
+                    </select>
+                </div>
+                <div class="campoForm">
+                    <p>Conocimientos previos:</p>
+                    <div>
+                        <ul>
+                            <li class="checkBox">
+                                <input type="checkbox" id="HTML">
+                                <label for="HTML">HTML</label>
+                            </li>
+                            <li class="checkBox">
+                                <input type="checkbox" id="CSS">
+                                <label for="CSS">CSS</label>
+                            </li>
+                            <li class="checkBox">
+                                <input type="checkbox" id="JavaScript">
+                                <label for="JavaScript">JavaScript</label>
+                            </li>
+                            <li class="checkBox">
+                                <input type="checkbox" id="Python">
+                                <label for="Python">Python</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="validar">
+            <input type="submit" value="Enviar datos" class="color1 validarInput">
+        </div>
+    </form>
+</div>
