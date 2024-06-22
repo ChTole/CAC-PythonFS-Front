@@ -7,6 +7,7 @@ al contenido dinámico. Para ésto también debo evaluar si la llamada a mi siti
 vienen acompañada de algún hash.*/
 
 import { cargarDatos } from "./cursos.js";
+import { cerrarSesion } from "./sesion.js";
 import { activarForm } from "./validarRegistro.js";
 
 // creo obj con las rutas
@@ -18,6 +19,7 @@ const sitio = {
     registro: ['./sitio/registro/registro.html', activarForm],
     perfil: ['./sitio/registro/perfil.html', activarForm],
     ingresar: ['./sitio/sesion/ingresar.html', activarForm],
+    cerrar: ['./sitio/sesion/cerrar.html', cerrarSesion],
     rtaForm: ['./sitio/registro/rtaForm.html',]
 }
 
@@ -45,7 +47,7 @@ function mostrarHash() {
     cambiarSeccion(ruta[0]);
     if (ruta[1]){
         // cambiarSeccion es asincro
-        setTimeout(ruta[1], 500);
+        setTimeout(ruta[1], 300);
     }
 }
 
