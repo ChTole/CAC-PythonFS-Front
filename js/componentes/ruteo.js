@@ -12,12 +12,13 @@ import { activarForm } from "./validarRegistro.js";
 // creo obj con las rutas
 const sitio = {
     // contenido: [url-plantilla, scripts-adicionales]
+    404: ['./sitio/404.html'],
     cursos: ['./sitio/cursos.html', cargarDatos],
     acercaDe: ['./sitio/acercade.html',],
-    registro: ['./sitio/registro.html', activarForm],
-    perfil: ['./sitio/perfil.html', activarForm],
-    rtaForm: ['./sitio/rtaForm.html',],
-    404: ['./sitio/404.html']
+    registro: ['./sitio/registro/registro.html', activarForm],
+    perfil: ['./sitio/registro/perfil.html', activarForm],
+    ingresar: ['./sitio/sesion/ingresar.html', activarForm],
+    rtaForm: ['./sitio/registro/rtaForm.html',]
 }
 
 // función que completa el contenido

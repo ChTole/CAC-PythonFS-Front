@@ -1,3 +1,5 @@
+import { validarCuenta } from "./sesion.js";
+
 // Creo un modelo con los datos esperados
 const modeloDatos = {
     // Con regex
@@ -57,8 +59,6 @@ async function enviarDatos(destino, datos) {
     setTimeout(respuestaOk, 300, datos, resultado);
 }
 
-
-
 // Validación de los datos ingresados con modelo
 function validarRegistro(tipo) {
     let destino;
@@ -67,6 +67,8 @@ function validarRegistro(tipo) {
         destino = 'http://127.0.0.1:5000/api-edtech/cuenta';
     } else if (tipo == 'perfil') {
         destino = 'http://127.0.0.1:5000/api-edtech/registro';
+    } else if (tipo == 'ingreso') {
+        destino = 'http://127.0.0.1:5000/api-edtech/validar';
     } else {
         console.warn('Destino de los datos erróneo!')
     }
@@ -99,7 +101,13 @@ function validarRegistro(tipo) {
     }
 
     if (formValido) {
-        enviarDatos(destino, datos)    
+
+        if (tipo != 'ingreso') {
+            enviarDatos(destino, datos);
+        } else {
+            validarCuenta(destino, datos);
+        }
+
     } else {
         msjError.innerHTML = 'Verifique los datos ingresados!'
     }
