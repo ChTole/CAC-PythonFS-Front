@@ -36,20 +36,17 @@ function modificarNavegacion(persona) {
     identidad.href = '#perfil';
     identidad.innerHTML = `Hola, ${persona}`;
     nav.appendChild(identidad);
-    localStorage.setItem('identidad', persona);
+    sessionStorage.setItem('identidad', persona);
 }
 
 function validarSesion() {
-    if (localStorage.getItem('identidad')) {
-        console.log(localStorage);
-        modificarNavegacion(localStorage.getItem('identidad'));
+    if (sessionStorage.getItem('identidad')) {
+        modificarNavegacion(sessionStorage.getItem('identidad'));
     }
 }
 
 function cerrarSesion() {
-    // window.location.reload();
-    console.log('entró al cierre!')
-    localStorage.clear();
+    sessionStorage.clear();
     document.querySelector('#regCuenta').removeAttribute('hidden');
     document.querySelector('#persona').remove();
     let logueo = document.querySelector('#ingCuenta');
