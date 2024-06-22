@@ -10,7 +10,7 @@ const modeloDatos = {
 const modeloFormacion = {
     educacionFormal: [
         'Secundario incompleto',
-        'selected>Secundario completo',
+        'Secundario completo',
         'Terciario/Universitario incompleto',
         'Terciario/Universitario completo'
     ],
@@ -23,8 +23,10 @@ const modeloFormacion = {
 }
 
 // Completo datos recibidos en rtaForm
-function respuestaOk(datos){
+function respuestaOk(datos, resultado){
     let lista = document.querySelector('#datosValidos');
+    let encabezado = document.querySelector('h2');
+    encabezado.innerHTML = resultado.mensaje
     for (let d in datos) {
         if (d != 'contrasenia') {
             let item = document.createElement('li');
@@ -33,6 +35,29 @@ function respuestaOk(datos){
         }
     }
 }
+// Envío de datos
+async function enviarDatos(destino, datos) {
+    let envio = {
+        method: "POST",
+        body: JSON.stringify({
+        datos: datos
+        }),
+        headers: {
+        "Content-type": "application/json; charset=UTF-8"
+        }
+    }
+
+    let resultado = await fetch(destino, envio)
+                        .then(respuesta => respuesta.json())
+                        .then(resultado => resultado)
+                        .catch(error => console.warn(error.status));
+                        
+    window.location.hash = '#rtaForm';
+    // Aguardo que cargue la respuesta, luego la completo
+    setTimeout(respuestaOk, 300, datos, resultado);
+}
+
+
 
 // Validación de los datos ingresados con modelo
 function validarRegistro(tipo) {
@@ -74,25 +99,11 @@ function validarRegistro(tipo) {
     }
 
     if (formValido) {
-        fetch(destino, {
-            method: "POST",
-            body: JSON.stringify({
-              datos: datos
-            }),
-            headers: {
-              "Content-type": "application/json; charset=UTF-8"
-            }
-          })
-          .then(respuesta => respuesta.json())
-          .then(resultado => console.log(resultado))
-          .catch(error => console.warn(error.status));
+        enviarDatos(destino, datos)    
     } else {
         msjError.innerHTML = 'Verifique los datos ingresados!'
     }
 
-    window.location.hash = '#rtaForm';
-        // Aguardo que cargue la respuesta, luego la completo
-        setTimeout(respuestaOk, 300, datos);
 }
 
 // ********** Activación del formulario **********
