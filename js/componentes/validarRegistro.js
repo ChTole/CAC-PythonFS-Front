@@ -6,7 +6,8 @@ const modeloDatos = {
     nombre: /^[a-zA-Z\s]+$/,
     apellido: /^[a-zA-Z\s]+$/,
     correo: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-    contrasenia: /^[a-z+A-Z+0-9+]{8,16}$/
+    contrasenia: /^[a-z+A-Z+0-9+]{8,16}$/,
+    doc_identidad: /^[0-9]{8,10}$/
 }
 
 const modeloFormacion = {
@@ -56,6 +57,7 @@ async function enviarDatos(destino, datos) {
                         
     window.location.hash = '#rtaForm';
     // Aguardo que cargue la respuesta, luego la completo
+    sessionStorage.setItem('perfil', 1);
     setTimeout(respuestaOk, 300, datos, resultado);
 }
 
@@ -66,7 +68,7 @@ function validarRegistro(tipo) {
     if (tipo == 'cuenta') {
         destino = 'http://127.0.0.1:5000/api-edtech/cuenta';
     } else if (tipo == 'perfil') {
-        destino = 'http://127.0.0.1:5000/api-edtech/registro';
+        destino = 'http://127.0.0.1:5000/api-edtech/perfil';
     } else if (tipo == 'ingreso') {
         destino = 'http://127.0.0.1:5000/api-edtech/validar';
     } else {
@@ -75,14 +77,14 @@ function validarRegistro(tipo) {
 
     let entradas = document.querySelectorAll('.campoForm>input');
     let datos = {}
+    
     entradas.forEach(elemento => {
         datos[elemento.getAttribute('id')] = elemento.value;
     });
-
     let formValido = true; // bandera
     let msjError = document.querySelector('#errores');
 
-    for (let clave in modeloDatos) {
+    for (let clave in datos) {
         if (!modeloDatos[clave].test(datos[clave])){
             formValido = false;
         }
@@ -90,6 +92,7 @@ function validarRegistro(tipo) {
     
     if (tipo == 'perfil') {
         // Datos select y checkbox
+        datos.correo = sessionStorage.getItem('identidad');
         let valorSelect = document.querySelector('#educacionFormal').value;
         datos.educacion = modeloFormacion.educacionFormal[valorSelect];
         
@@ -116,7 +119,7 @@ function validarRegistro(tipo) {
 
 // ********** Activación del formulario **********
 function activarForm() {
-    const form = document.querySelector('form');
+    let form = document.querySelector('form');
     form.addEventListener('submit', evento => {
         validarRegistro(form.id);
         evento.preventDefault();

@@ -12,7 +12,6 @@ window.addEventListener("DOMContentLoaded", evento => {
 // Si cambia el hash, cambia el contenido
 window.addEventListener("hashchange", evento => {
     mostrarHash();
-    // validarSesion();
 });
 
 // ********** Menú oculto para celu **********

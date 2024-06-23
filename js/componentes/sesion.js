@@ -17,13 +17,13 @@ async function validarCuenta(destino, datos) {
                         .catch(error => console.warn(error.status));
     
     if (resultado.status == 200) {
-        modificarNavegacion(datos.correo);
+        modificarNavegacion(datos.correo, resultado.perfil);
     } else {
         alert('Revisá los datos ingresados');
     }
 }
 
-function modificarNavegacion(persona) {
+function modificarNavegacion(persona, perfil) {
     document.querySelector('#regCuenta').setAttribute('hidden', 'true');
     let logueo = document.querySelector('#ingCuenta');
     logueo.innerHTML = "Cerrar sesión";
@@ -37,11 +37,12 @@ function modificarNavegacion(persona) {
     identidad.innerHTML = `Hola, ${persona}`;
     nav.appendChild(identidad);
     sessionStorage.setItem('identidad', persona);
+    sessionStorage.setItem('perfil', perfil);
 }
 
 function validarSesion() {
     if (sessionStorage.getItem('identidad')) {
-        modificarNavegacion(sessionStorage.getItem('identidad'));
+        modificarNavegacion(sessionStorage.getItem('identidad'), sessionStorage.getItem('perfil'));
     }
 }
 

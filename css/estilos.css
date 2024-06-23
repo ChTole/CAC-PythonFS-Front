@@ -171,6 +171,13 @@ div ul .checkBox {
     margin-top: 0.75rem;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+input[type=number] { -moz-appearance:textfield; }
+
 /* Parche */
 .linksCH:hover {
     background-color: #88498F;
