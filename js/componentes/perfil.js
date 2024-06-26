@@ -34,6 +34,7 @@ async function eliminarCuenta(correo){
                     .catch(error => console.warn('Algo salió mal!', error));
     
     sessionStorage.removeItem('identidad');
+    sessionStorage.removeItem('perfil');
     window.location.hash = '#cerrar';
 }
 
@@ -91,7 +92,6 @@ async function obtenerPerfil(correo) {
                     .catch(error => console.warn('Algo salió mal!', error));
     
     completarForm(perfil);
-    
 }
 
 function validarPerfil() {
