@@ -66,11 +66,11 @@ function validarRegistro(tipo) {
     let destino;
 
     if (tipo == 'cuenta') {
-        destino = 'http://127.0.0.1:5000/api-edtech/cuenta';
+        destino = 'https://chtolecac.pythonanywhere.com/api-edtech/cuenta';
     } else if (tipo == 'perfil') {
-        destino = 'http://127.0.0.1:5000/api-edtech/perfil';
+        destino = 'https://chtolecac.pythonanywhere.com/api-edtech/perfil';
     } else if (tipo == 'ingreso') {
-        destino = 'http://127.0.0.1:5000/api-edtech/validar';
+        destino = 'https://chtolecac.pythonanywhere.com/api-edtech/validar';
     } else {
         console.warn('Destino de los datos erróneo!')
     }

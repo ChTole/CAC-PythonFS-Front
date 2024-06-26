@@ -1,7 +1,7 @@
 // Carga de los datos externos
 const cargarDatos = function() {
     let contenido = document.querySelector('.articulos');
-    fetch('http://127.0.0.1:5000/api-edtech/temas')
+    fetch('https://chtolecac.pythonanywhere.com/api-edtech/temas')
         .then(respuesta => respuesta.json())
         .then(datos => cargarCursos(contenido, datos));
 }

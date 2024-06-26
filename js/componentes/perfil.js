@@ -28,7 +28,7 @@ async function eliminarCuenta(correo){
         }
     }
 
-    let perfil = await fetch('http://127.0.0.1:5000/api-edtech/eliminar', envio)
+    let perfil = await fetch('https://chtolecac.pythonanywhere.com/api-edtech/eliminar', envio)
                     .then(respuesta => respuesta.json())
                     .then(datos => datos)
                     .catch(error => console.warn('Algo salió mal!', error));
@@ -86,7 +86,7 @@ async function obtenerPerfil(correo) {
         }
     }
 
-    let perfil = await fetch('http://127.0.0.1:5000/api-edtech/obt-perfil', envio)
+    let perfil = await fetch('https://chtolecac.pythonanywhere.com/api-edtech/obt-perfil', envio)
                     .then(respuesta => respuesta.json())
                     .then(datos => datos)
                     .catch(error => console.warn('Algo salió mal!', error));
